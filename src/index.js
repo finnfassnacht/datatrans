@@ -2,6 +2,7 @@ const express = require("express");
 const serverless = require("serverless-http");
 const datastore = require("nedb");
 const app = express()
+app.use(express.json())
 const database = new datastore("epicshelter.db")
 database.loadDatabase()
 const router = express.Router();
